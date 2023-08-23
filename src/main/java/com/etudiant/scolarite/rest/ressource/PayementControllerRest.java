@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/payement")
 public class PayementControllerRest {
@@ -47,5 +48,10 @@ public class PayementControllerRest {
     @RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
     public boolean deletePayement(@PathVariable("id") Long id) {
         return payementService.supprimerPayement(id);
+    }
+
+    @RequestMapping(value="/etudiant/mtregle/{id}", method=RequestMethod.GET)
+    public Long getMontantRegleByEtudiantId(@PathVariable("id") Long id){
+        return payementService.getTotalMontantDejaRegleByEtudiantId(id);
     }
 }

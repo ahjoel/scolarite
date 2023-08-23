@@ -72,4 +72,8 @@ public class PayementService {
 
         return true;
     }
+
+    public Long getTotalMontantDejaRegleByEtudiantId(Long etudiantId) {
+        return payementRepository.sumMontantDejaRegle(etudiantId);
+    }
 }

@@ -1,6 +1,7 @@
 package com.etudiant.scolarite.service.mapper;
 
 import com.etudiant.scolarite.model.dto.EtudiantDto;
+import com.etudiant.scolarite.model.dto.FormationDto;
 import com.etudiant.scolarite.model.entities.Etudiant;
 import com.etudiant.scolarite.model.entities.Formation;
 import org.mapstruct.Mapper;
@@ -13,7 +14,7 @@ public interface EtudiantMapper {
     Etudiant toEntity(EtudiantDto etudiantDto);
     EtudiantDto toDto(Etudiant etudiant);
 
-    Formation toFormationEntity(EtudiantDto etudiantDto);
+    Formation toFormationEntity(FormationDto formationDto);
 
     void copy(EtudiantDto etudiantDto, @MappingTarget Etudiant etudiant);
 }
